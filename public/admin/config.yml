@@ -1,0 +1,174 @@
+backend:
+  name: github
+  repo: TheAdmanCross/twm
+  branch: main
+
+local_backend: true
+media_folder: "public/assets/images/uploads"
+public_folder: "/assets/images/uploads"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - label: "Homepage"
+        name: "home_settings"
+        file: "src/content/settings/home.json"
+        format: "json"
+        fields:
+          - { label: "Meta Title", name: "metaTitle", widget: "string" }
+          - { label: "Meta Description", name: "metaDescription", widget: "text" }
+          - { label: "Hero Eyebrow", name: "heroEyebrow", widget: "string" }
+          - { label: "Hero Title", name: "heroTitle", widget: "string" }
+          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text" }
+          - { label: "Primary CTA Label", name: "primaryCtaLabel", widget: "string" }
+          - { label: "Primary CTA Link", name: "primaryCtaHref", widget: "string" }
+          - { label: "Secondary CTA Label", name: "secondaryCtaLabel", widget: "string" }
+          - { label: "Secondary CTA Link", name: "secondaryCtaHref", widget: "string" }
+          - label: "Hero Proof Cards"
+            name: "heroProofCards"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Body", name: "body", widget: "text" }
+          - { label: "Hero Floating Label", name: "heroFloatingLabel", widget: "string" }
+          - { label: "Hero Floating Body", name: "heroFloatingBody", widget: "text" }
+          - label: "Trust Items"
+            name: "trustItems"
+            widget: "list"
+            field: { label: "Trust Item", name: "trustItem", widget: "string" }
+          - { label: "Story Label", name: "storyLabel", widget: "string" }
+          - { label: "Story Title", name: "storyTitle", widget: "string" }
+          - { label: "Story Body", name: "storyBody", widget: "text" }
+          - { label: "Offers Title", name: "offersTitle", widget: "string" }
+          - { label: "Offers Intro", name: "offersIntro", widget: "text" }
+          - label: "Homepage Plans"
+            name: "offers"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Price", name: "price", widget: "string" }
+              - { label: "Period", name: "period", widget: "string" }
+              - { label: "Badge", name: "badge", widget: "string", required: false }
+              - { label: "Summary", name: "summary", widget: "text" }
+              - label: "Features"
+                name: "features"
+                widget: "list"
+                field: { label: "Feature", name: "feature", widget: "string" }
+              - { label: "CTA Label", name: "ctaLabel", widget: "string" }
+              - { label: "CTA Link", name: "ctaHref", widget: "string" }
+          - { label: "Process Title", name: "processTitle", widget: "string" }
+          - label: "Process Steps"
+            name: "processSteps"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Body", name: "body", widget: "text" }
+          - { label: "FAQ Title", name: "faqTitle", widget: "string" }
+          - label: "FAQs"
+            name: "faqs"
+            widget: "list"
+            fields:
+              - { label: "Question", name: "question", widget: "string" }
+              - { label: "Answer", name: "answer", widget: "text" }
+          - { label: "Final CTA Eyebrow", name: "finalCtaEyebrow", widget: "string" }
+          - { label: "Final CTA Title", name: "finalCtaTitle", widget: "string" }
+          - { label: "Final CTA Body", name: "finalCtaBody", widget: "text" }
+          - { label: "Final CTA Label", name: "finalCtaLabel", widget: "string" }
+          - { label: "Final CTA Link", name: "finalCtaHref", widget: "string" }
+
+      - label: "Indicator PRO Page"
+        name: "indicator_pro_settings"
+        file: "src/content/settings/indicator-pro.json"
+        format: "json"
+        fields:
+          - { label: "Meta Title", name: "metaTitle", widget: "string" }
+          - { label: "Meta Description", name: "metaDescription", widget: "text" }
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Intro", name: "intro", widget: "text" }
+          - { label: "Hero Eyebrow", name: "heroEyebrow", widget: "string" }
+          - { label: "Hero Title", name: "heroTitle", widget: "string" }
+          - { label: "Hero Body", name: "heroBody", widget: "text" }
+          - { label: "Hero Panel Title", name: "heroPanelTitle", widget: "string" }
+          - { label: "Hero Panel Body", name: "heroPanelBody", widget: "string" }
+          - { label: "Top CTA Label", name: "ctaLabel", widget: "string" }
+          - { label: "Top CTA Link", name: "ctaHref", widget: "string" }
+          - label: "Indicator PRO Plans"
+            name: "plans"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Price", name: "price", widget: "string" }
+              - { label: "Period", name: "period", widget: "string", required: false }
+              - { label: "Badge", name: "badge", widget: "string", required: false }
+              - { label: "Summary", name: "summary", widget: "text" }
+              - label: "Features"
+                name: "features"
+                widget: "list"
+                field: { label: "Feature", name: "feature", widget: "string" }
+              - { label: "Plan CTA Label", name: "ctaLabel", widget: "string" }
+              - { label: "Plan CTA Link", name: "ctaHref", widget: "string" }
+          - { label: "Bottom Eyebrow", name: "bottomEyebrow", widget: "string" }
+          - { label: "Bottom Title", name: "bottomTitle", widget: "string" }
+          - { label: "Bottom Body", name: "bottomBody", widget: "text" }
+          - { label: "Bottom CTA Label", name: "bottomCtaLabel", widget: "string" }
+          - { label: "Bottom CTA Link", name: "bottomCtaHref", widget: "string" }
+
+      - label: "Contact Page"
+        name: "contact_settings"
+        file: "src/content/settings/contact.json"
+        format: "json"
+        fields:
+          - { label: "Meta Title", name: "metaTitle", widget: "string" }
+          - { label: "Meta Description", name: "metaDescription", widget: "text" }
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Intro", name: "intro", widget: "text" }
+          - label: "Info Cards"
+            name: "infoCards"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Body", name: "body", widget: "text" }
+          - { label: "CTA Eyebrow", name: "ctaEyebrow", widget: "string" }
+          - { label: "CTA Title", name: "ctaTitle", widget: "string" }
+          - { label: "CTA Body", name: "ctaBody", widget: "text" }
+          - { label: "Primary CTA Label", name: "primaryCtaLabel", widget: "string" }
+          - { label: "Primary CTA Link", name: "primaryCtaHref", widget: "string" }
+          - { label: "Secondary CTA Label", name: "secondaryCtaLabel", widget: "string" }
+          - { label: "Secondary CTA Link", name: "secondaryCtaHref", widget: "string" }
+          - { label: "Form Eyebrow", name: "formEyebrow", widget: "string" }
+          - { label: "Form Title", name: "formTitle", widget: "string" }
+          - { label: "Form Body", name: "formBody", widget: "text" }
+          - label: "Form Fields"
+            name: "formFields"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Name", name: "name", widget: "string" }
+              - label: "Type"
+                name: "type"
+                widget: "select"
+                options: ["text", "email", "textarea"]
+              - { label: "Placeholder", name: "placeholder", widget: "string" }
+          - { label: "Form Button Label", name: "formButtonLabel", widget: "string" }
+          - { label: "Form Helper Text", name: "formHelperText", widget: "text" }
+
+  - name: "testimonials"
+    label: "Testimonials"
+    label_singular: "Testimonial"
+    folder: "src/content/testimonials"
+    create: true
+    format: "json"
+    extension: "json"
+    slug: "{{slug}}"
+    identifier_field: "name"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Role", name: "role", widget: "string" }
+      - { label: "Quote", name: "quote", widget: "text" }
+      - { label: "Result", name: "result", widget: "string" }

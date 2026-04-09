@@ -1,0 +1,173 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import contact from "../content/settings/contact.json";
+
+type FormField = {
+  label: string;
+  name: string;
+  type: "text" | "email" | "textarea";
+  placeholder: string;
+};
+
+const formFields = contact.formFields as FormField[];
+---
+
+<BaseLayout
+  title={contact.metaTitle}
+  description={contact.metaDescription}
+>
+  <section class="section">
+    <div class="container contact-grid">
+      <div class="section-copy">
+        <span class="eyebrow">{contact.eyebrow}</span>
+        <h1 class="page-title">{contact.title}</h1>
+        <p>{contact.intro}</p>
+        <div class="contact-points glass-card">
+          {contact.infoCards.map((card) => (
+            <div>
+              <strong>{card.label}</strong>
+              <p>{card.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="contact-stack">
+        <div class="contact-card glass-card">
+          <span class="eyebrow">{contact.ctaEyebrow}</span>
+          <h2>{contact.ctaTitle}</h2>
+          <p>{contact.ctaBody}</p>
+          <a class="button button-primary" href={contact.secondaryCtaHref}>
+            {contact.secondaryCtaLabel}
+          </a>
+        </div>
+
+        <form class="contact-form glass-card">
+          <span class="eyebrow">{contact.formEyebrow}</span>
+          <h2>{contact.formTitle}</h2>
+          <p>{contact.formBody}</p>
+
+          <div class="form-grid">
+            {formFields.map((field) =>
+              field.type === "textarea" ? (
+                <label class="field field-full">
+                  <span>{field.label}</span>
+                  <textarea name={field.name} placeholder={field.placeholder} rows="6"></textarea>
+                </label>
+              ) : (
+                <label class="field">
+                  <span>{field.label}</span>
+                  <input type={field.type} name={field.name} placeholder={field.placeholder} />
+                </label>
+              )
+            )}
+          </div>
+
+          <button type="submit" class="button button-primary">{contact.formButtonLabel}</button>
+          <p class="form-helper">{contact.formHelperText}</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+    align-items: start;
+  }
+
+  .contact-stack {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .page-title {
+    max-width: 12ch;
+  }
+
+  .contact-points {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    display: grid;
+    gap: 1.2rem;
+  }
+
+  .contact-points strong {
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+
+  .contact-card,
+  .contact-form {
+    padding: 1.8rem;
+    display: grid;
+    gap: 1rem;
+    background:
+      radial-gradient(circle at top right, rgba(212, 175, 55, 0.18), transparent 24%),
+      linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03)),
+      rgba(20, 7, 9, 0.82);
+  }
+
+  .form-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .field {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .field-full {
+    grid-column: 1 / -1;
+  }
+
+  .field span {
+    color: rgba(248, 242, 237, 0.82);
+    font-size: 0.9rem;
+  }
+
+  .field input,
+  .field textarea {
+    width: 100%;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text);
+    padding: 0.95rem 1rem;
+    font: inherit;
+    resize: vertical;
+    outline: none;
+    transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+  }
+
+  .field input:focus,
+  .field textarea:focus {
+    border-color: rgba(212, 175, 55, 0.4);
+    box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.08);
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .form-helper {
+    font-size: 0.92rem;
+    color: rgba(239, 225, 215, 0.66);
+  }
+
+  @media (max-width: 960px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .form-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .field-full {
+      grid-column: auto;
+    }
+  }
+</style>

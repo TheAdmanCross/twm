@@ -1,0 +1,54 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HeroSection from "../components/sections/HeroSection.astro";
+import StorySection from "../components/sections/StorySection.astro";
+import OffersSection from "../components/sections/OffersSection.astro";
+import ProcessSection from "../components/sections/ProcessSection.astro";
+import TestimonialsSection from "../components/sections/TestimonialsSection.astro";
+import FaqSection from "../components/sections/FaqSection.astro";
+import FinalCtaSection from "../components/sections/FinalCtaSection.astro";
+import home from "../content/settings/home.json";
+
+interface Testimonial {
+  name: string;
+  role: string;
+  quote: string;
+  result: string;
+}
+
+const testimonialModules = Object.values(
+  import.meta.glob<{ default: Testimonial }>("../content/testimonials/*.json", { eager: true })
+);
+
+const testimonials = testimonialModules
+  .map((entry) => entry.default)
+  .sort((a, b) => a.name.localeCompare(b.name));
+---
+
+<BaseLayout title={home.metaTitle} description={home.metaDescription}>
+  <HeroSection
+    eyebrow={home.heroEyebrow}
+    title={home.heroTitle}
+    subtitle={home.heroSubtitle}
+    primaryCtaLabel={home.primaryCtaLabel}
+    primaryCtaHref={home.primaryCtaHref}
+    secondaryCtaLabel={home.secondaryCtaLabel}
+    secondaryCtaHref={home.secondaryCtaHref}
+    heroProofCards={home.heroProofCards}
+    heroFloatingLabel={home.heroFloatingLabel}
+    heroFloatingBody={home.heroFloatingBody}
+    trustItems={home.trustItems}
+  />
+  <StorySection label={home.storyLabel} title={home.storyTitle} body={home.storyBody} />
+  <OffersSection title={home.offersTitle} intro={home.offersIntro} offers={home.offers} />
+  <TestimonialsSection items={testimonials} />
+  <ProcessSection title={home.processTitle} steps={home.processSteps} />
+  <FaqSection title={home.faqTitle} faqs={home.faqs} />
+  <FinalCtaSection
+    eyebrow={home.finalCtaEyebrow}
+    title={home.finalCtaTitle}
+    body={home.finalCtaBody}
+    label={home.finalCtaLabel}
+    href={home.finalCtaHref}
+  />
+</BaseLayout>

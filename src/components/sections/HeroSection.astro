@@ -1,0 +1,211 @@
+---
+import ScenePortal from "../ui/ScenePortal";
+
+interface Props {
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+  primaryCtaLabel: string;
+  primaryCtaHref: string;
+  secondaryCtaLabel: string;
+  secondaryCtaHref: string;
+  heroProofCards: { title: string; body: string }[];
+  heroFloatingLabel: string;
+  heroFloatingBody: string;
+  trustItems: string[];
+}
+
+const {
+  eyebrow,
+  title,
+  subtitle,
+  primaryCtaLabel,
+  primaryCtaHref,
+  secondaryCtaLabel,
+  secondaryCtaHref,
+  heroProofCards,
+  heroFloatingLabel,
+  heroFloatingBody,
+  trustItems
+} = Astro.props;
+---
+
+<section class="section hero-section">
+  <div class="container hero-shell glass-card">
+    <div class="hero-backdrop"></div>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">{eyebrow}</span>
+        <h1>{title}</h1>
+        <p class="hero-intro">{subtitle}</p>
+        <div class="button-row">
+          <a class="button button-primary" href={primaryCtaHref}>{primaryCtaLabel}</a>
+          <a class="button button-secondary" href={secondaryCtaHref}>{secondaryCtaLabel}</a>
+        </div>
+        <div class="hero-proof">
+          {heroProofCards.map((card) => (
+            <div class="hero-proof-item">
+              <strong>{card.title}</strong>
+              <span>{card.body}</span>
+            </div>
+          ))}
+        </div>
+        <div class="kicker-list">
+          {trustItems.map((item) => <span class="kicker-pill">{item}</span>)}
+        </div>
+      </div>
+
+      <div class="hero-visual-wrap">
+        <ScenePortal client:load />
+        <div class="hero-floating-note glass-card">
+          <span>{heroFloatingLabel}</span>
+          <p>{heroFloatingBody}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    padding-top: 2.8rem;
+  }
+
+  .hero-shell {
+    position: relative;
+    padding: 2rem;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at top left, rgba(179, 25, 25, 0.22), transparent 22%),
+      radial-gradient(circle at 78% 18%, rgba(212, 175, 55, 0.16), transparent 18%),
+      linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.015)),
+      rgba(18, 7, 9, 0.88);
+  }
+
+  .hero-backdrop {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(125deg, transparent 0%, rgba(255,255,255,0.06) 38%, transparent 52%),
+      linear-gradient(180deg, transparent 35%, rgba(0,0,0,0.22));
+    opacity: 0.8;
+    pointer-events: none;
+  }
+
+  .hero-grid {
+    position: relative;
+    display: grid;
+    gap: 2rem;
+    align-items: start;
+    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  }
+
+  .hero-copy {
+    display: grid;
+    gap: 1.4rem;
+    max-width: 40rem;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(3.7rem, 6.4vw, 6.15rem);
+    max-width: 8ch;
+    line-height: 0.98;
+  }
+
+  .hero-intro {
+    max-width: 38rem;
+    font-size: 1.1rem;
+  }
+
+  .hero-proof {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+    max-width: 32rem;
+  }
+
+  .hero-proof-item {
+    padding: 1.15rem;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+  }
+
+  .hero-proof-item strong {
+    display: block;
+    margin-bottom: 0.45rem;
+    color: var(--text);
+  }
+
+  .hero-proof-item span {
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  .hero-visual-wrap {
+    position: relative;
+    min-height: 650px;
+    display: flex;
+    align-items: flex-start;
+    z-index: 1;
+  }
+
+  .hero-floating-note {
+    position: absolute;
+    left: 1.25rem;
+    bottom: 1.25rem;
+    width: min(320px, 50%);
+    padding: 1.15rem 1.25rem;
+    background:
+      radial-gradient(circle at top right, rgba(212, 175, 55, 0.18), transparent 24%),
+      linear-gradient(180deg, rgba(255,255,255,0.1), rgba(255,255,255,0.03)),
+      rgba(20, 7, 9, 0.82);
+  }
+
+  .hero-floating-note span {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: rgba(248, 242, 237, 0.66);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 960px) {
+    .hero-shell {
+      padding: 1.25rem;
+    }
+
+    .hero-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-proof {
+      max-width: none;
+    }
+
+    .hero-visual-wrap {
+      min-height: auto;
+      display: block;
+    }
+
+    .hero-floating-note {
+      position: static;
+      width: 100%;
+      margin-top: 1rem;
+    }
+  }
+
+  @media (max-width: 1220px) {
+    .hero-grid {
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    }
+
+    .hero-floating-note {
+      width: min(280px, 48%);
+      left: 1.5rem;
+      bottom: 1.5rem;
+    }
+  }
+</style>

@@ -1,0 +1,78 @@
+---
+interface Testimonial {
+  name: string;
+  role: string;
+  quote: string;
+  result: string;
+}
+
+interface Props {
+  items: Testimonial[];
+}
+
+const { items } = Astro.props;
+---
+
+<section class="section" id="proof">
+  <div class="container">
+    <div class="section-copy">
+      <span class="eyebrow">Proof and trust</span>
+      <h2>What members feel once the noise starts to disappear.</h2>
+      <p>The current testimonials are content placeholders from the live offer and polished sample copy. The section is already CMS-ready for replacing with real wins, screenshots, and case studies.</p>
+    </div>
+    <div class="grid-3">
+      {items.map((item) => (
+        <article class="testimonial-card glass-card">
+          <p class="quote">"{item.quote}"</p>
+          <div class="testimonial-meta">
+            <strong>{item.name}</strong>
+            <span>{item.role}</span>
+          </div>
+          <span class="result">{item.result}</span>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonial-card {
+    padding: 1.5rem;
+    display: grid;
+    gap: 1.2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .testimonial-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.05), transparent 26%),
+      radial-gradient(circle at top right, rgba(179, 25, 25, 0.16), transparent 18%);
+    pointer-events: none;
+  }
+
+  .quote {
+    color: rgba(245, 247, 251, 0.9);
+    font-size: 1.02rem;
+    position: relative;
+  }
+
+  .testimonial-meta {
+    display: grid;
+    gap: 0.2rem;
+  }
+
+  .testimonial-meta span,
+  .result {
+    color: var(--muted);
+  }
+
+  .result {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.78rem;
+  }
+</style>

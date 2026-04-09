@@ -1,0 +1,45 @@
+---
+interface Step {
+  title: string;
+  body: string;
+}
+
+interface Props {
+  title: string;
+  steps: Step[];
+}
+
+const { title, steps } = Astro.props;
+---
+
+<section class="section">
+  <div class="container">
+    <div class="section-copy">
+      <span class="eyebrow">Inside the experience</span>
+      <h2>{title}</h2>
+    </div>
+    <div class="grid-3">
+      {steps.map((step, index) => (
+        <article class="process-card glass-card">
+          <span class="process-number">0{index + 1}</span>
+          <h3>{step.title}</h3>
+          <p>{step.body}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .process-card {
+    padding: 1.5rem;
+    display: grid;
+    gap: 1rem;
+  }
+
+  .process-number {
+    color: rgba(255, 255, 255, 0.46);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+</style>

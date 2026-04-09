@@ -1,0 +1,53 @@
+{
+  "metaTitle": "Contact | Trading With Matt",
+  "metaDescription": "Get in touch with Trading With Matt for plan guidance, membership questions, and premium trading access.",
+  "eyebrow": "Contact",
+  "title": "Start the conversation before you join.",
+  "intro": "Reach out for membership questions, plan fit, collaboration, or direct contact about how the Trading With Matt ecosystem works. The tone here should feel personal, premium, and decisive.",
+  "infoCards": [
+    {
+      "label": "Email",
+      "body": "matt@tradingwithmatt.ai"
+    },
+    {
+      "label": "Best use",
+      "body": "VIP plan questions, access requests, partnerships, or private guidance."
+    }
+  ],
+  "ctaEyebrow": "Primary CTA",
+  "ctaTitle": "Request access or ask which plan is right for you.",
+  "ctaBody": "Use the form to reach out now. If you are still comparing paths inside the brand, the VIP plans page gives the clearest next step.",
+  "secondaryCtaLabel": "Compare VIP Plans",
+  "secondaryCtaHref": "/pricing-plans/plans-pricing",
+  "formEyebrow": "Contact form",
+  "formTitle": "Send a direct inquiry",
+  "formBody": "Use this form for plan guidance, Indicator PRO questions, private access requests, or collaboration opportunities.",
+  "formFields": [
+    {
+      "label": "Full name",
+      "name": "name",
+      "type": "text",
+      "placeholder": "Your name"
+    },
+    {
+      "label": "Email address",
+      "name": "email",
+      "type": "email",
+      "placeholder": "you@example.com"
+    },
+    {
+      "label": "Subject",
+      "name": "subject",
+      "type": "text",
+      "placeholder": "How can we help?"
+    },
+    {
+      "label": "Message",
+      "name": "message",
+      "type": "textarea",
+      "placeholder": "Tell us what you are looking for."
+    }
+  ],
+  "formButtonLabel": "Send Inquiry",
+  "formHelperText": "This is the polished form shell. We can wire delivery to Netlify Forms, Formspree, Resend, or a custom endpoint in the next step."
+}

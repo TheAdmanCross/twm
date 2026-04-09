@@ -1,0 +1,139 @@
+---
+interface Offer {
+  name: string;
+  price: string;
+  period: string;
+  badge: string;
+  summary: string;
+  features: string[];
+  ctaLabel: string;
+  ctaHref: string;
+}
+
+interface Props {
+  title: string;
+  intro: string;
+  offers: Offer[];
+}
+
+const { title, intro, offers } = Astro.props;
+---
+
+<section class="section" id="offers">
+  <div class="container">
+    <div class="section-copy">
+      <span class="eyebrow">Memberships</span>
+      <h2>{title}</h2>
+      <p>{intro}</p>
+    </div>
+
+    <div class="grid-3">
+      {offers.map((offer) => (
+        <article class="offer-card glass-card">
+          <div class="offer-top">
+            <div>
+              <h3>{offer.name}</h3>
+              <p>{offer.summary}</p>
+            </div>
+            {offer.badge && <span class="offer-badge">{offer.badge}</span>}
+          </div>
+          <div class="offer-price">
+            <strong>{offer.price}</strong>
+            <span>{offer.period}</span>
+          </div>
+          <ul>
+            {offer.features.map((feature) => <li>{feature}</li>)}
+          </ul>
+          <a class="button button-primary" href={offer.ctaHref}>{offer.ctaLabel}</a>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .offer-card {
+    padding: 1.7rem;
+    display: grid;
+    gap: 1.35rem;
+    min-height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .offer-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at top right, rgba(212, 175, 55, 0.18), transparent 26%),
+      radial-gradient(circle at bottom left, rgba(179, 25, 25, 0.14), transparent 22%);
+    pointer-events: none;
+  }
+
+  .offer-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .offer-top p {
+    margin-top: 0.55rem;
+  }
+
+  .offer-badge {
+    white-space: nowrap;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.55rem 0.8rem;
+    border-radius: 999px;
+    background: rgba(212, 175, 55, 0.14);
+    border: 1px solid rgba(212, 175, 55, 0.28);
+    color: #f3df9a;
+  }
+
+  .offer-price {
+    display: flex;
+    align-items: baseline;
+    gap: 0.35rem;
+  }
+
+  .offer-price strong {
+    font-size: 3rem;
+    line-height: 1;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 600;
+  }
+
+  .offer-price span {
+    color: var(--muted);
+  }
+
+  .offer-card ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .offer-card li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    color: rgba(245, 247, 251, 0.88);
+    line-height: 1.55;
+  }
+
+  .offer-card li::before {
+    content: "";
+    width: 0.55rem;
+    height: 0.55rem;
+    margin-top: 0.45rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--accent), white);
+    flex: 0 0 auto;
+  }
+</style>

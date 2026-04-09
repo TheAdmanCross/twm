@@ -1,0 +1,76 @@
+---
+interface Props {
+  label: string;
+  title: string;
+  body: string;
+}
+
+const { label, title, body } = Astro.props;
+---
+
+<section class="section">
+  <div class="container story-wrap glass-card">
+    <div class="story-copy">
+      <span class="eyebrow">{label}</span>
+      <h2>{title}</h2>
+      <p>{body}</p>
+    </div>
+    <div class="story-metrics">
+      <div class="metric">
+        <strong>15+</strong>
+        <span>Years of market experience shaping the offer.</span>
+      </div>
+      <div class="metric">
+        <strong>3</strong>
+        <span>Membership paths, from signals to high-touch coaching.</span>
+      </div>
+      <div class="metric">
+        <strong>1</strong>
+        <span>Clear brand promise: trade with more precision and less noise.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .story-wrap {
+    padding: 2rem;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+  }
+
+  .story-copy {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .story-metrics {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .metric {
+    padding: 1.3rem;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .metric strong {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 0.45rem;
+  }
+
+  .metric span {
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 960px) {
+    .story-wrap {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

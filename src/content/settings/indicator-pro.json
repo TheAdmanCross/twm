@@ -1,0 +1,66 @@
+{
+  "metaTitle": "Indicator PRO | Trading With Matt",
+  "metaDescription": "Separate Indicator PRO plans for traders who want buy and sell signals built on 15 years of market mastery, structure, FVGs, and EMA confluences.",
+  "eyebrow": "Indicator PRO",
+  "title": "Indicator PRO is a separate VIP access tier inside Trading With Matt.",
+  "intro": "These are not the same three memberships shown on the homepage. Indicator PRO is its own offer line with three dedicated plans focused on buy and sell signals, market structure, FVGs, and EMA confluences.",
+  "heroEyebrow": "Separate Offer",
+  "heroTitle": "Indicator PRO sits outside the three homepage memberships.",
+  "heroBody": "This route is intentionally separated so visitors understand there are six total plans across the brand: three Trading With Matt memberships on the homepage and three dedicated Indicator PRO plans here.",
+  "heroPanelTitle": "Indicator PRO",
+  "heroPanelBody": "Distinct offer line",
+  "ctaLabel": "Contact About Indicator PRO",
+  "ctaHref": "/contact",
+  "bottomEyebrow": "Next step",
+  "bottomTitle": "Use the contact page to ask about the Indicator PRO offer or get direct plan guidance.",
+  "bottomBody": "This page is now CMS-driven, so pricing, summaries, badges, and features can all be edited without touching code.",
+  "bottomCtaLabel": "Ask About Indicator PRO",
+  "bottomCtaHref": "/contact",
+  "plans": [
+    {
+      "name": "Trading With Matt PRO - Buy/Sell Signals",
+      "price": "$199",
+      "period": "Every month",
+      "badge": "",
+      "summary": "15 years of market mastery in one tool. Trade price action, not lag. Using structure, FVGs, and EMA confluences, we provide clear signals for Forex and Crypto. Trade with clarity.",
+      "features": [
+        "Monthly access",
+        "Buy and sell signals",
+        "Forex and Crypto coverage",
+        "Structure, FVG, and EMA confluences"
+      ],
+      "ctaLabel": "Select",
+      "ctaHref": "/contact"
+    },
+    {
+      "name": "Trading With Matt PRO - Buy/Sell Signals",
+      "price": "$999",
+      "period": "Every 6 months",
+      "badge": "Best value",
+      "summary": "15 years of market mastery in one tool. Trade price action, not lag. Using structure, FVGs, and EMA confluences, we provide clear signals for Forex and Crypto. Trade with clarity.",
+      "features": [
+        "6-month access",
+        "Buy and sell signals",
+        "Forex and Crypto coverage",
+        "Structure, FVG, and EMA confluences"
+      ],
+      "ctaLabel": "Select",
+      "ctaHref": "/contact"
+    },
+    {
+      "name": "Trading With Matt PRO - Buy/Sell Signals",
+      "price": "$4,999",
+      "period": "Lifetime access",
+      "badge": "Lifetime",
+      "summary": "Lifetime access to 15 years of market mastery in one tool. Trade price action, not lag. Using structure, FVGs, and EMA confluences, we provide clear signals for Forex and Crypto. Trade with clarity.",
+      "features": [
+        "Lifetime access",
+        "Buy and sell signals",
+        "Forex and Crypto coverage",
+        "Structure, FVG, and EMA confluences"
+      ],
+      "ctaLabel": "Select",
+      "ctaHref": "/contact"
+    }
+  ]
+}

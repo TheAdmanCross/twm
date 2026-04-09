@@ -1,0 +1,120 @@
+{
+  "metaTitle": "Trading With Matt | Precision, Access, Edge",
+  "metaDescription": "A premium trading membership for serious traders who want structure, sharper execution, and closer access to Matt's market process.",
+  "heroEyebrow": "Trading With Matt",
+  "heroTitle": "Precision for traders who are done wasting potential.",
+  "heroSubtitle": "Join a premium trading environment built around discipline, high-quality market reads, and direct access to the process behind better decisions. Less noise. Better positioning. Stronger conviction.",
+  "primaryCtaLabel": "Explore Memberships",
+  "primaryCtaHref": "/pricing-plans/plans-pricing",
+  "secondaryCtaLabel": "See Member Results",
+  "secondaryCtaHref": "#proof",
+  "heroProofCards": [
+    {
+      "title": "Authority",
+      "body": "15+ years of market experience distilled into cleaner decisions and stronger discipline."
+    },
+    {
+      "title": "Exclusivity",
+      "body": "Private access, direct feedback, and a higher-standard room built for serious traders."
+    },
+    {
+      "title": "Opportunity",
+      "body": "Join for structure, stay for sharper reads, better filters, and more conviction around execution."
+    }
+  ],
+  "heroFloatingLabel": "Member psychology",
+  "heroFloatingBody": "People join premium offers when the brand projects calm authority, scarce access, and a believable path to better outcomes.",
+  "trustItems": [
+    "15+ years market experience",
+    "Private Discord access",
+    "Live breakdowns and direct feedback",
+    "Mentorship built on discipline"
+  ],
+  "storyLabel": "Why this works",
+  "storyTitle": "You do not need more trades. You need a better filter.",
+  "storyBody": "Most traders do not fail because they lack effort. They fail because they operate in noise, react emotionally, and never develop a refined framework for what deserves action. Matt's offer is designed to tighten decision-making, raise standards, and help traders operate with more patience, more structure, and more edge.",
+  "offersTitle": "Choose the level of access that matches your standard",
+  "offersIntro": "From serious community access to close mentorship, each membership is structured to move a trader from scattered effort toward composed execution.",
+  "offers": [
+    {
+      "name": "Core",
+      "price": "$27",
+      "period": "/month",
+      "badge": "",
+      "summary": "The right starting point for traders who want disciplined market access, live context, and a serious room.",
+      "features": [
+        "VIP Discord role access",
+        "Signals and market discussion",
+        "Trader's handbook",
+        "Trade breakdowns and mindset support"
+      ],
+      "ctaLabel": "Start with Core",
+      "ctaHref": "/pricing-plans/plans-pricing"
+    },
+    {
+      "name": "Precision",
+      "price": "$97",
+      "period": "/month",
+      "badge": "Most chosen",
+      "summary": "For traders who want more proximity, sharper feedback, and direct refinement from Matt.",
+      "features": [
+        "Everything in Core",
+        "One 45-minute monthly mentorship call",
+        "Direct question access",
+        "Execution and review feedback"
+      ],
+      "ctaLabel": "Upgrade to Precision",
+      "ctaHref": "/pricing-plans/plans-pricing"
+    },
+    {
+      "name": "Apex",
+      "price": "$297",
+      "period": "/month",
+      "badge": "High-touch",
+      "summary": "A private, high-touch environment for traders who want serious coaching and elevated access.",
+      "features": [
+        "Everything in Precision",
+        "Four monthly mentorship sessions",
+        "Advanced strategy and performance coaching",
+        "Off-stream trade access"
+      ],
+      "ctaLabel": "Enter Apex",
+      "ctaHref": "/pricing-plans/plans-pricing"
+    }
+  ],
+  "processTitle": "What joining actually unlocks",
+  "processSteps": [
+    {
+      "title": "Clarity",
+      "body": "A sharper understanding of what matters now, what to ignore, and which setups are worth your capital."
+    },
+    {
+      "title": "Discipline",
+      "body": "A tighter decision framework for entries, patience, risk, and execution under pressure."
+    },
+    {
+      "title": "Access",
+      "body": "Signals, live market discussion, direct feedback, and a community with higher standards."
+    }
+  ],
+  "faqTitle": "Questions serious traders ask before joining",
+  "faqs": [
+    {
+      "question": "How do I get access to Matt's signals?",
+      "answer": "All paid plans include VIP Discord access where signals, market discussion, and trade commentary are shared."
+    },
+    {
+      "question": "Which plan includes one-to-one mentorship?",
+      "answer": "Precision includes one monthly call and Apex expands that into a more hands-on coaching relationship."
+    },
+    {
+      "question": "Can I cancel if it is not the right fit?",
+      "answer": "Yes. The memberships are structured as recurring access and can be canceled."
+    }
+  ],
+  "finalCtaEyebrow": "Private access",
+  "finalCtaTitle": "Step into a trading environment built for people who want more than motivation.",
+  "finalCtaBody": "If you are ready for clearer structure, better execution, and closer access to Matt's market thinking, this is where that next level begins.",
+  "finalCtaLabel": "Request Access",
+  "finalCtaHref": "/contact"
+}

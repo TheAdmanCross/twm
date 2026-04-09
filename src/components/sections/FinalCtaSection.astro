@@ -1,0 +1,77 @@
+---
+interface Props {
+  eyebrow: string;
+  title: string;
+  body: string;
+  label: string;
+  href: string;
+}
+
+const { eyebrow, title, body, label, href } = Astro.props;
+---
+
+<section class="section" id="final-cta">
+  <div class="container">
+    <div class="final-cta glass-card">
+      <div class="final-cta-copy">
+        <span class="eyebrow">{eyebrow}</span>
+        <h2>{title}</h2>
+        <p>{body}</p>
+      </div>
+      <div class="final-cta-action">
+        <a class="button button-primary" href={href}>{label}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .final-cta {
+    padding: 2rem;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    background:
+      radial-gradient(circle at top left, rgba(179, 25, 25, 0.22), transparent 24%),
+      radial-gradient(circle at right center, rgba(212, 175, 55, 0.18), transparent 20%),
+      linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)),
+      rgba(18, 7, 9, 0.88);
+    border: 1px solid rgba(255, 212, 169, 0.18);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .final-cta::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.05) 42%, transparent 56%),
+      linear-gradient(180deg, transparent, rgba(0,0,0,0.2));
+    pointer-events: none;
+  }
+
+  .final-cta-copy {
+    position: relative;
+    display: grid;
+    gap: 1rem;
+    max-width: 54rem;
+  }
+
+  .final-cta-copy h2 {
+    line-height: 0.98;
+  }
+
+  .final-cta-action {
+    position: relative;
+    align-self: center;
+  }
+
+  @media (max-width: 960px) {
+    .final-cta {
+      grid-template-columns: 1fr;
+      align-items: start;
+    }
+  }
+</style>

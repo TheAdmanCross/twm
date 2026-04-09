@@ -1,0 +1,313 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import indicatorPro from "../../content/settings/indicator-pro.json";
+---
+
+<BaseLayout
+  title={indicatorPro.metaTitle}
+  description={indicatorPro.metaDescription}
+>
+  <section class="section">
+    <div class="container">
+      <div class="section-copy">
+        <span class="eyebrow">{indicatorPro.eyebrow}</span>
+        <h1 class="page-title">{indicatorPro.title}</h1>
+        <p>{indicatorPro.intro}</p>
+      </div>
+
+      <div class="indicator-hero glass-card">
+        <div class="indicator-hero-copy">
+          <span class="eyebrow">{indicatorPro.heroEyebrow}</span>
+          <h2>{indicatorPro.heroTitle}</h2>
+          <p>{indicatorPro.heroBody}</p>
+          <a class="button button-primary" href={indicatorPro.ctaHref}>{indicatorPro.ctaLabel}</a>
+        </div>
+        <div class="indicator-hero-visual">
+          <div class="indicator-core-ring"></div>
+          <div class="indicator-core-ring indicator-core-ring-secondary"></div>
+          <div class="indicator-core-panel glass-card">
+            <strong>{indicatorPro.heroPanelTitle}</strong>
+            <span>{indicatorPro.heroPanelBody}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="plans-grid">
+        {indicatorPro.plans.map((plan, index) => (
+          <article class={`plan-card glass-card ${plan.badge ? "plan-card-featured" : ""}`}>
+            <div class={`plan-media plan-media-${index + 1}`}>
+              <div class="plan-media-mark">Indicator PRO</div>
+            </div>
+            <div class="plan-top">
+              <div>
+                <h2 class="plan-name">{plan.name}</h2>
+                <p>{plan.summary}</p>
+              </div>
+              {plan.badge && <span class="offer-badge">{plan.badge}</span>}
+            </div>
+            <div class="plan-price">
+              <strong>{plan.price}</strong>
+              {plan.period && <span>{plan.period}</span>}
+            </div>
+            <ul>
+              {plan.features.map((feature) => <li>{feature}</li>)}
+            </ul>
+            <a class="button button-primary" href={plan.ctaHref}>{plan.ctaLabel}</a>
+          </article>
+        ))}
+      </div>
+
+      <div class="pricing-cta glass-card">
+        <div>
+          <span class="eyebrow">{indicatorPro.bottomEyebrow}</span>
+          <h2 class="pricing-cta-title">{indicatorPro.bottomTitle}</h2>
+          <p>{indicatorPro.bottomBody}</p>
+        </div>
+        <a class="button button-primary" href={indicatorPro.bottomCtaHref}>{indicatorPro.bottomCtaLabel}</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-title {
+    max-width: 14ch;
+  }
+
+  .indicator-hero {
+    padding: 1.8rem;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at top right, rgba(179, 25, 25, 0.2), transparent 22%),
+      radial-gradient(circle at left center, rgba(212, 175, 55, 0.12), transparent 18%),
+      linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)),
+      rgba(18, 7, 9, 0.84);
+  }
+
+  .indicator-hero-copy {
+    display: grid;
+    gap: 1rem;
+    align-content: center;
+  }
+
+  .indicator-hero-visual {
+    position: relative;
+    min-height: 320px;
+    border-radius: 30px;
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01)),
+      rgba(12, 5, 6, 0.88);
+    border: 1px solid rgba(255,255,255,0.08);
+    overflow: hidden;
+  }
+
+  .indicator-core-ring {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    top: 8%;
+    left: 16%;
+    border-radius: 999px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    box-shadow: inset 0 0 80px rgba(212, 175, 55, 0.06);
+  }
+
+  .indicator-core-ring-secondary {
+    width: 180px;
+    height: 180px;
+    top: 28%;
+    left: 44%;
+    border-color: rgba(179, 25, 25, 0.24);
+  }
+
+  .indicator-core-panel {
+    position: absolute;
+    right: 8%;
+    bottom: 8%;
+    padding: 1.2rem;
+    width: 210px;
+  }
+
+  .indicator-core-panel strong {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 1.3rem;
+  }
+
+  .indicator-core-panel span {
+    color: var(--muted);
+  }
+
+  .plans-grid {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .plan-card {
+    padding: 1.8rem;
+    display: grid;
+    gap: 1.3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .plan-media {
+    min-height: 165px;
+    border-radius: 22px;
+    border: 1px solid rgba(255,255,255,0.08);
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 1rem;
+    background:
+      radial-gradient(circle at 30% 26%, rgba(255,255,255,0.08), transparent 16%),
+      linear-gradient(135deg, rgba(179,25,25,0.45), rgba(16,6,7,0.95));
+  }
+
+  .plan-media-2 {
+    background:
+      radial-gradient(circle at 30% 26%, rgba(255,255,255,0.12), transparent 16%),
+      linear-gradient(135deg, rgba(255,255,255,0.9), rgba(18,18,18,0.92));
+  }
+
+  .plan-media-3 {
+    background:
+      radial-gradient(circle at 30% 26%, rgba(255,255,255,0.1), transparent 16%),
+      linear-gradient(135deg, rgba(212,175,55,0.88), rgba(34,18,4,0.95));
+  }
+
+  .plan-media-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 150px;
+    min-height: 150px;
+    border-radius: 999px;
+    padding: 1rem;
+    background:
+      radial-gradient(circle at 35% 28%, rgba(255,255,255,0.4), transparent 24%),
+      linear-gradient(135deg, #ff4a33, #9c1010 62%, #330505);
+    border: 2px solid rgba(255,245,240,0.72);
+    box-shadow:
+      inset 0 2px 8px rgba(255,255,255,0.28),
+      0 0 42px rgba(179,25,25,0.24);
+    color: #fff6ef;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .plan-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at top right, rgba(212, 175, 55, 0.16), transparent 24%),
+      radial-gradient(circle at bottom left, rgba(179, 25, 25, 0.16), transparent 20%);
+    pointer-events: none;
+  }
+
+  .plan-card-featured {
+    transform: translateY(-0.35rem);
+    border-color: rgba(212, 175, 55, 0.3);
+  }
+
+  .plan-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .plan-name {
+    font-size: 1.8rem;
+    margin-bottom: 0.6rem;
+    line-height: 1.05;
+  }
+
+  .plan-price {
+    display: grid;
+    gap: 0.2rem;
+  }
+
+  .plan-price strong {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 4rem;
+    line-height: 1;
+  }
+
+  .plan-price span {
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.82rem;
+  }
+
+  .plan-card ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .plan-card li {
+    display: flex;
+    gap: 0.7rem;
+    line-height: 1.55;
+  }
+
+  .plan-card li::before {
+    content: "";
+    width: 0.52rem;
+    height: 0.52rem;
+    margin-top: 0.48rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+    flex: 0 0 auto;
+  }
+
+  .offer-badge {
+    white-space: nowrap;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.55rem 0.8rem;
+    border-radius: 999px;
+    background: rgba(212, 175, 55, 0.14);
+    border: 1px solid rgba(212, 175, 55, 0.28);
+    color: #f3df9a;
+  }
+
+  .pricing-cta {
+    margin-top: 2rem;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+  .pricing-cta-title {
+    margin: 0.8rem 0;
+  }
+
+  @media (max-width: 960px) {
+    .indicator-hero,
+    .plans-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .pricing-cta {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>
