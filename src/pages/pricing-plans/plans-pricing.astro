@@ -1,6 +1,9 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import indicatorPro from "../../content/settings/indicator-pro.json";
+import { withBasePath } from "../../utils/links";
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
@@ -20,7 +23,7 @@ import indicatorPro from "../../content/settings/indicator-pro.json";
           <span class="eyebrow">{indicatorPro.heroEyebrow}</span>
           <h2>{indicatorPro.heroTitle}</h2>
           <p>{indicatorPro.heroBody}</p>
-          <a class="button button-primary" href={indicatorPro.ctaHref}>{indicatorPro.ctaLabel}</a>
+          <a class="button button-primary" href={withBasePath(indicatorPro.ctaHref, base)}>{indicatorPro.ctaLabel}</a>
         </div>
         <div class="indicator-hero-visual">
           <div class="indicator-core-ring"></div>
@@ -52,7 +55,7 @@ import indicatorPro from "../../content/settings/indicator-pro.json";
             <ul>
               {plan.features.map((feature) => <li>{feature}</li>)}
             </ul>
-            <a class="button button-primary" href={plan.ctaHref}>{plan.ctaLabel}</a>
+            <a class="button button-primary" href={withBasePath(plan.ctaHref, base)}>{plan.ctaLabel}</a>
           </article>
         ))}
       </div>
@@ -63,7 +66,7 @@ import indicatorPro from "../../content/settings/indicator-pro.json";
           <h2 class="pricing-cta-title">{indicatorPro.bottomTitle}</h2>
           <p>{indicatorPro.bottomBody}</p>
         </div>
-        <a class="button button-primary" href={indicatorPro.bottomCtaHref}>{indicatorPro.bottomCtaLabel}</a>
+        <a class="button button-primary" href={withBasePath(indicatorPro.bottomCtaHref, base)}>{indicatorPro.bottomCtaLabel}</a>
       </div>
     </div>
   </section>

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import contact from "../content/settings/contact.json";
+import { withBasePath } from "../utils/links";
 
 type FormField = {
   label: string;
@@ -10,6 +11,7 @@ type FormField = {
 };
 
 const formFields = contact.formFields as FormField[];
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
@@ -37,7 +39,7 @@ const formFields = contact.formFields as FormField[];
           <span class="eyebrow">{contact.ctaEyebrow}</span>
           <h2>{contact.ctaTitle}</h2>
           <p>{contact.ctaBody}</p>
-          <a class="button button-primary" href={contact.secondaryCtaHref}>
+          <a class="button button-primary" href={withBasePath(contact.secondaryCtaHref, base)}>
             {contact.secondaryCtaLabel}
           </a>
         </div>

@@ -1,5 +1,6 @@
 ---
 import ScenePortal from "../ui/ScenePortal";
+import { withBasePath } from "../../utils/links";
 
 interface Props {
   eyebrow: string;
@@ -28,6 +29,8 @@ const {
   heroFloatingBody,
   trustItems
 } = Astro.props;
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <section class="section hero-section">
@@ -39,8 +42,8 @@ const {
         <h1>{title}</h1>
         <p class="hero-intro">{subtitle}</p>
         <div class="button-row">
-          <a class="button button-primary" href={primaryCtaHref}>{primaryCtaLabel}</a>
-          <a class="button button-secondary" href={secondaryCtaHref}>{secondaryCtaLabel}</a>
+          <a class="button button-primary" href={withBasePath(primaryCtaHref, base)}>{primaryCtaLabel}</a>
+          <a class="button button-secondary" href={withBasePath(secondaryCtaHref, base)}>{secondaryCtaLabel}</a>
         </div>
         <div class="hero-proof">
           {heroProofCards.map((card) => (

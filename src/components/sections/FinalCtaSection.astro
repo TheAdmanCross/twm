@@ -1,4 +1,6 @@
 ---
+import { withBasePath } from "../../utils/links";
+
 interface Props {
   eyebrow: string;
   title: string;
@@ -8,6 +10,7 @@ interface Props {
 }
 
 const { eyebrow, title, body, label, href } = Astro.props;
+const base = import.meta.env.BASE_URL;
 ---
 
 <section class="section" id="final-cta">
@@ -19,7 +22,7 @@ const { eyebrow, title, body, label, href } = Astro.props;
         <p>{body}</p>
       </div>
       <div class="final-cta-action">
-        <a class="button button-primary" href={href}>{label}</a>
+        <a class="button button-primary" href={withBasePath(href, base)}>{label}</a>
       </div>
     </div>
   </div>
