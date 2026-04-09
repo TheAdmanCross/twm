@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 
+const base = import.meta.env.BASE_URL;
+const logoSrc = `${base === "/" ? "" : base.replace(/\/$/, "")}/assets/images/matt-logo.png`;
+
 const rings = [
   { size: 520, top: "2%", left: "36%", delay: "0s" },
   { size: 320, top: "50%", left: "2%", delay: "1.2s" },
@@ -32,7 +35,7 @@ export default function ScenePortal() {
         }}
       >
         <div className="scene-logo-stage">
-          <img className="scene-logo" src="/assets/images/matt-logo.png" alt="Trading With Matt logo" />
+          <img className="scene-logo" src={logoSrc} alt="Trading With Matt logo" />
         </div>
 
         <div className="scene-panel scene-panel-main">
